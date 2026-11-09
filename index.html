@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abakar Makki Abdallah – Développeur web et mobile</title>
+<meta name="description" content="Abakar Makki Abdallah, étudiant en développement web et mobile à l’IISAN (N’Djamena) et créateur de contenu TikTok.">
+<meta property="og:title" content="Abakar Makki Abdallah – Développeur web et mobile">
+<meta property="og:description" content="Portfolio d’un futur développeur web et mobile au Tchad.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--ink:#F2F2F2;--mute:#B5B5B5;--card:#0D0D0D;--line:#262626;--gold:#FECB00;--red:#C60C30;--blue:#002664}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.6;padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+/* Navigation */
+nav{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav::before{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--blue) 33%,var(--gold) 33% 66%,var(--red) 66%)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;text-decoration:none;font-size:1.2rem}
+.logo span{color:var(--gold)}
+.menu{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.menu a{text-decoration:none;color:var(--mute);font-weight:600}
+.menu a:hover{color:var(--gold)}
+.burger{display:none;background:none;border:2px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer}
+@media(max-width:700px){
+.burger{display:block}
+.menu{display:none;position:absolute;top:100%;left:0;right:0;background:#000;flex-direction:column;padding:16px 20px;border-bottom:1px solid var(--line)}
+.menu.open{display:flex}}
+/* Sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+h1{font-size:clamp(2.4rem,8vw,4.4rem);line-height:1.02;margin:0 0 14px;font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 28px}
+h2::after{content:"";display:block;width:48px;height:4px;background:var(--gold);margin-top:10px;border-radius:2px}
+p{color:var(--mute);max-width:64ch;margin:0 0 14px}
+/* Hero */
+.hero{display:grid;gap:40px;align-items:center;padding:64px 0}
+@media(min-width:760px){.hero{grid-template-columns:1.3fr 1fr}}
+.tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:4px 12px;border-radius:99px;font-size:.85rem;font-weight:600;margin-bottom:16px}
+.role{font-size:1.3rem;font-weight:600;color:var(--gold);min-height:2em}
+.role::after{content:"|";animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-block;padding:13px 22px;border-radius:8px;font-weight:700;text-decoration:none;border:2px solid var(--ink);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--gold);border-color:var(--gold);color:#000}
+.photo{max-width:320px;width:100%;margin:0 auto;border-radius:10px;overflow:hidden;background:var(--card);border:3px solid var(--gold);box-shadow:12px 12px 0 var(--red);aspect-ratio:1/1}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.photo b{display:none;height:100%;align-items:center;justify-content:center;font-size:4rem}
+/* Cartes */
+.grid{display:grid;gap:16px}
+@media(min-width:700px){.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c2{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.card h3{margin:0 0 8px;font-size:1.15rem}
+.card p{margin:0;font-size:.95rem}
+.ico{font-size:1.8rem;margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:12px 0 0}
+.tags li{border:1px solid var(--line);padding:5px 12px;border-radius:6px;font-size:.9rem;font-weight:600}
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.stats div{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 8px}
+.stats b{display:block;font-size:1.8rem;color:var(--gold)}
+.stats span{font-size:.85rem;color:var(--mute)}
+/* Parcours */
+.tl{list-style:none;margin:0;padding:0 0 0 24px;border-left:3px solid var(--gold)}
+.tl li{position:relative;margin-bottom:26px}
+.tl li::before{content:"";position:absolute;left:-33px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.tl b{display:block}.tl span{color:var(--mute)}
+/* Formulaire */
+form{display:grid;gap:12px}
+label{font-weight:600;font-size:.9rem}
+input,textarea{width:100%;padding:13px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;margin-top:4px}
+input:focus,textarea:focus,.btn:focus-visible,a:focus-visible,.burger:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.links{display:grid;gap:12px;align-content:start}
+.links a{display:block;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:10px;text-decoration:none;font-weight:700}
+.links a:hover{border-color:var(--gold)}
+.links small{display:block;color:var(--mute);font-weight:400}
+footer{text-align:center;padding:30px 20px;color:var(--mute);font-size:.9rem;border-top:1px solid var(--line)}
+/* Animation d'apparition */
+.rev{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rev.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}.role::after{animation:none}html{scroll-behavior:auto}}
+
+/* ===== Animations professionnelles ===== */
+html{overflow-x:clip}
+#progress{position:fixed;top:0;left:0;height:4px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;z-index:50}
+#loader{position:fixed;inset:0;z-index:100;background:#000;display:grid;place-items:center;transition:opacity .6s,visibility .6s;animation:autohide .5s 3s forwards}
+#loader.hide{opacity:0;visibility:hidden}
+.ld{text-align:center}
+.ld .logo{display:block;font-size:2rem;margin-bottom:14px}
+#loader i{display:block;width:160px;height:4px;margin:0 auto;background:linear-gradient(90deg,var(--blue) 33%,var(--gold) 33% 66%,var(--red) 66%);transform-origin:left;animation:load 1s ease forwards}
+@keyframes load{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes autohide{to{opacity:0;visibility:hidden}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.85) rotate(-3deg)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-10px)}}
+@keyframes orb{50%{transform:translate(-30px,30px) scale(1.15)}}
+@keyframes shine{to{left:160%}}
+.hero{position:relative}
+.hero::before{content:"";position:absolute;width:320px;height:320px;right:0;top:10%;background:radial-gradient(circle,rgba(254,203,0,.22),transparent 65%);filter:blur(30px);animation:orb 9s ease-in-out infinite;z-index:-1;pointer-events:none}
+.hero>div:first-child>*{opacity:0;animation:up .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.9s + var(--i,0)*.12s)}
+.hero>div:first-child>:nth-child(2){--i:1}.hero>div:first-child>:nth-child(3){--i:2}.hero>div:first-child>:nth-child(4){--i:3}.hero>div:first-child>:nth-child(5){--i:4}
+.hero>.photo{opacity:0;animation:pop 1s .9s cubic-bezier(.2,.7,.2,1) forwards,float 6s 2.2s ease-in-out infinite}
+.btn.main{position:relative;overflow:hidden}
+.btn.main::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3.5s 2.5s infinite}
+.menu a.active{color:var(--gold)}
+.st:not(.show){opacity:0}
+.st.show{animation:up .7s var(--d,0s) backwards}
+.card{position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(254,203,0,.14),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::after{opacity:1}
+.tl{border-left:0;padding-left:27px;position:relative}
+.tl::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform 1.4s ease}
+.tl.in::before{transform:scaleY(1)}
+#top{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:2px solid var(--gold);background:#000;color:var(--gold);font-size:1.3rem;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s;z-index:30}
+#top.show{opacity:1;visibility:visible;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.hero>div:first-child>*,.hero>.photo,.st:not(.show){opacity:1!important}#loader{display:none}.tl::before{transform:none}}
+</style>
+<noscript><style>.rev,.st,.hero>div:first-child>*,.hero>.photo{opacity:1!important;transform:none!important;animation:none!important}#loader{display:none}.tl::before{transform:none}</style></noscript>
+</head>
+<body>
+<div id="progress"></div>
+<div id="loader" aria-hidden="true"><div class="ld"><b class="logo">Abakar<span>.dev</span></b><i></i></div></div>
+
+<nav>
+  <div class="wrap bar">
+    <a href="#accueil" class="logo">Abakar<span>.dev</span></a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<header class="hero" id="accueil">
+  <div>
+    <span class="tag">IISAN · N’Djamena, Tchad</span>
+    <h1>Abakar Makki Abdallah</h1>
+    <p class="role" id="role">Futur développeur web</p>
+    <p>Étudiant en développement web et mobile, je veux créer des sites et des applications utiles pour le Tchad, et je partage mon parcours sur TikTok.</p>
+    <div class="btns">
+      <a class="btn main" href="https://wa.me/23560877495">Écrire sur WhatsApp</a>
+      <a class="btn" href="#projets">Voir mes projets</a>
+    </div>
+  </div>
+  <div class="photo">
+    <img src="photo.jpg" alt="Portrait d’Abakar Makki Abdallah" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <b aria-hidden="true">AM</b>
+  </div>
+</header>
+
+<section id="apropos" class="rev">
+  <h2>À propos</h2>
+  <p>J’ai obtenu mon baccalauréat en 2024 et je suis aujourd’hui en première année de licence en développement web et mobile à l’Institut international des sciences et des arts numériques (IISAN).</p>
+  <p>Mon objectif : devenir développeur web et mobile et construire ma carrière au Tchad, en créant des outils numériques utiles à mon pays.</p>
+  <div class="stats">
+    <div><b>L1</b><span>Dev web et mobile</span></div>
+    <div><b data-count="2024">2024</b><span>Année du bac</span></div>
+    <div><b>TikTok</b><span>Créateur de contenu</span></div>
+  </div>
+</section>
+
+<section id="competences" class="rev">
+  <h2>Compétences</h2>
+  <div class="grid c3">
+    <article class="card"><div class="ico">💻</div><h3>Développement</h3><p>En formation sur le web et le mobile.</p>
+      <ul class="tags"><li>Web</li><li>Mobile</li></ul></article>
+    <article class="card"><div class="ico">📊</div><h3>Bureautique</h3><p>Outils maîtrisés au quotidien.</p>
+      <ul class="tags"><li>Excel</li><li>Word</li><li>PowerPoint</li></ul></article>
+    <article class="card"><div class="ico">🎬</div><h3>Contenu et langues</h3><p>Création de contenu et anglais en progression.</p>
+      <ul class="tags"><li>TikTok</li><li>Anglais niveau 1</li></ul></article>
+  </div>
+</section>
+
+<section id="parcours" class="rev">
+  <h2>Parcours</h2>
+  <ol class="tl">
+    <li><b>Baccalauréat</b><span>2024</span></li>
+    <li><b>Licence 1, développement web et mobile</b><span>IISAN, N’Djamena · en cours</span></li>
+    <li><b>Créateur de contenu</b><span>TikTok, compte abakar.dev</span></li>
+  </ol>
+</section>
+
+<section id="projets" class="rev">
+  <h2>Projets</h2>
+  <div class="grid c3">
+    <article class="card"><div class="ico">🌐</div><h3>Mon portfolio</h3><p>Le site que vous consultez, conçu et personnalisé par mes soins.</p></article>
+    <article class="card"><div class="ico">📱</div><h3>Contenu TikTok</h3><p>Je partage mon apprentissage du développement sur @abakar.dev.</p></article>
+    <article class="card"><div class="ico">🚀</div><h3>Prochaines applications</h3><p>Des projets web et mobile sont en préparation. Restez connectés.</p></article>
+  </div>
+</section>
+
+<section id="contact" class="rev">
+  <h2>Contact</h2>
+  <div class="grid c2">
+    <form id="form">
+      <label>Votre nom<input id="nom" required autocomplete="name"></label>
+      <label>Votre message<textarea id="msg" rows="4" required></textarea></label>
+      <button class="btn main" type="submit">Envoyer par WhatsApp</button>
+    </form>
+    <div class="links">
+      <a href="https://wa.me/23560877495">WhatsApp<small>+235 60 87 74 95</small></a>
+      <a href="https://www.tiktok.com/@abakar.dev">TikTok<small>@abakar.dev</small></a>
+      <a href="https://www.facebook.com/search/top?q=Abakar%20Makki%20Abdallah">Facebook<small>Abakar Makki Abdallah</small></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© 2026 Abakar Makki Abdallah · N’Djamena, Tchad</footer>
+
+<button id="top" aria-label="Retour en haut">↑</button>
+
+<script>
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* Écran d'intro */
+addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),reduce?0:800));
+
+/* Menu mobile */
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.onclick=()=>{const o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>menu.classList.remove('open'));
+
+/* Machine à écrire */
+const roles=['Futur développeur web','Futur développeur mobile','Créateur de contenu'];
+const el=document.getElementById('role');let ri=0,ci=0,del=false;
+function tick(){
+  const w=roles[ri];
+  el.textContent=w.slice(0,ci);
+  if(!del&&ci===w.length){del=true;return setTimeout(tick,1800)}
+  if(del&&ci===0){del=false;ri=(ri+1)%roles.length;return setTimeout(tick,300)}
+  ci+=del?-1:1;
+  setTimeout(tick,del?35:70);
+}
+if(!reduce)setTimeout(tick,2200);
+
+/* Apparition en cascade au défilement */
+document.querySelectorAll('.grid,.stats,.tl,.links').forEach(g=>[...g.children].forEach((c,i)=>{c.classList.add('st');c.style.setProperty('--d',i*.12+'s')}));
+function count(n){const to=+n.dataset.count,from=2000,t0=performance.now();(function f(t){const k=Math.min((t-t0)/1200,1);n.textContent=Math.round(from+(to-from)*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const t=e.target;
+  t.classList.add(t.classList.contains('st')?'show':'in');
+  if(t.classList.contains('stats')&&!reduce)t.querySelectorAll('[data-count]').forEach(count);
+  io.unobserve(t);
+}),{threshold:.15});
+document.querySelectorAll('.rev,.st,.tl,.stats').forEach(x=>io.observe(x));
+
+/* Lien actif dans le menu */
+const links=[...menu.querySelectorAll('a')];
+const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section[id]').forEach(x=>spy.observe(x));
+
+/* Cartes : lumière et inclinaison */
+if(matchMedia('(hover:hover)').matches&&!reduce){
+  document.querySelectorAll('.card').forEach(c=>{
+    c.addEventListener('pointermove',e=>{
+      const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+      c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');
+      c.style.transform='perspective(700px) rotateX('+((.5-y)*6)+'deg) rotateY('+((x-.5)*6)+'deg) translateY(-4px)';
+    });
+    c.addEventListener('pointerleave',()=>c.style.transform='');
+  });
+}
+
+/* Barre de progression et bouton retour en haut */
+const bar=document.getElementById('progress'),topBtn=document.getElementById('top');
+addEventListener('scroll',()=>{
+  const h=document.documentElement,max=h.scrollHeight-innerHeight;
+  bar.style.transform='scaleX('+(max>0?scrollY/max:0)+')';
+  topBtn.classList.toggle('show',scrollY>600);
+},{passive:true});
+topBtn.onclick=()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+
+/* Formulaire : ouvre WhatsApp avec le message */
+document.getElementById('form').onsubmit=e=>{
+  e.preventDefault();
+  const t='Bonjour Abakar, je suis '+document.getElementById('nom').value+'. '+document.getElementById('msg').value;
+  window.open('https://wa.me/23560877495?text='+encodeURIComponent(t),'_blank');
+};
+</script>
+</body>
+</html>
